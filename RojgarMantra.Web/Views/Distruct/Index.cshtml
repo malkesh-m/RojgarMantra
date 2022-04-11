@@ -1,0 +1,81 @@
+﻿@model IEnumerable<RojgarMantra.Models.Districtdetails>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div class="main-content-header container-fluid p-4">
+    <div>
+        <h6 class="main-content-title tx-18 mg-b-5 mg-t-7">District Details</h6>
+    </div>
+    <div class="btn-list">
+        <a id="BtnRefresh" class="btn btn-rounded btn-success"><i class="fe fe-plus-circle mr-2"></i>Refresh</a>
+        <a href='/Distruct/Create' class="btn btn-rounded btn-primary"><i class="fe fe-plus-circle mr-2"></i>Add</a>
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+<div class="card">
+    <div class="card-body" style="overflow:auto">
+        <!--Main Content Header-->
+        <table id="TblUser" class="table nowrap text-md-nowrap" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Action")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Country Name")
+                    </th>
+                    <th>
+                        @Html.ActionLink("State Name", "Index", new { Sorting_Order = ViewBag.SortingName })
+                    </th>
+                    <th>
+                        @Html.ActionLink("District Name", "Index", new { Sorting_Order = ViewBag.SortingName })
+                    </th>
+
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+
+                using (Html.BeginForm("Delete", "Distruct", new { id = item.DistrictID }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
+                    <tr>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.DistrictID }, new { @class = "btn btn-info" }) |
+
+                            <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete record ');" />
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CountryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StateName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DistrictName)
+                        </td>
+
+                    </tr>
+
+                }
+            }
+
+
+        </table>
+    </div>
+</div>

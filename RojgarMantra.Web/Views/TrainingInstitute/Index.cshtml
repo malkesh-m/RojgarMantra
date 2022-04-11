@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Training Institute List";
+}
+
+
+<div class="main-content-header container-fluid p-4">
+    <div>
+        <h6 class="main-content-title tx-18 mg-b-5 mg-t-7">Training Institute List</h6>
+    </div>
+
+    <div class="btn-list">
+        <a id="BtnRefresh" class="btn btn-rounded btn-success"><i class="fe fe-plus-circle mr-2"></i>Refresh</a>
+        <a href='/TrainingInstitute/AddEdit?Id=0' class="btn btn-rounded btn-primary"><i class="fe fe-plus-circle mr-2"></i>Add</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mg-b-20">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="TblTrainingInstitute" class="table nowrap text-md-nowrap" >
+                            <thead>
+                                <tr>
+                                    <th>Action</th>
+                                    <th>TrainingInstitute Name</th>
+                                    <th>Email</th>
+                                    <th>Contact Number</th>
+                                    <th>Company Link</th>
+                                    <th>Address</th>
+                                    <th>Designation</th>
+                                   @* <th>Role</th>*@
+                                    <th>Work Experience</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script>
+        $(function () {
+           TrainingInstituteIndex.init();
+        });
+    </script>
+}
+
+

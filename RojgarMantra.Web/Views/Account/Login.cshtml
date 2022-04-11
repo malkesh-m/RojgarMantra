@@ -1,0 +1,46 @@
+﻿@using RojgarMantra.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="main-signin-wrapper">
+    <div class="row text-center pl-0 pr-0 ml-0 mr-0">
+        <div class="col-lg-3 d-block mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <img src="~/Content/Images/logo-3.png" class="mb-3" alt="Logo" width="180" />
+                    
+                    <hr />
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal text-left mt-3", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <label>Email</label>
+                            @Html.TextBoxFor(m => m.Email, new { placeholder = "Enter your email", @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                          @*  @Html.DisplayTextFor(m=>m.Email)*@
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            @Html.PasswordFor(m => m.Password, new { placeholder = "Enter your password", @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-main-primary btn-block">Log in</button>
+                        <div class="main-signin-footer mg-t-5">
+                            <p><a href="@Url.Action("ForgotPassword","Account")">Forgot password?</a></p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

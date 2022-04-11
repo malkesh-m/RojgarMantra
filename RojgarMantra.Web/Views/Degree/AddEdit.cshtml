@@ -1,0 +1,58 @@
+﻿@model RojgarMantra.Core.Models.DegreeAddEditModel
+
+@{
+    ViewBag.Title = "Qualification AddEdit";
+}
+
+<div class="main-content-header container-fluid p-4">
+    <div>
+        <h6 class="main-content-title tx-18 mg-b-5 mg-t-7">Qualification Add/Edit</h6>
+    </div>
+</div>
+
+@using (Ajax.BeginForm("AddEdit", "Degree", new AjaxOptions { HttpMethod = "POST", OnSuccess = "success", OnFailure = "failure" }))
+{
+    <div class="card">
+        <div class="card-body">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id)
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group col-md-10">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.IsPostGraduationCourseOrDegree, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.IsPostGraduationCourseOrDegree, new { @value = true })
+                        @Html.ValidationMessageFor(model => model.IsPostGraduationCourseOrDegree, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <a href="@Url.Action("Index", "Degree")" class="btn btn-info">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section scripts{
+
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.js"></script>
+    <script>
+        function success(data, textStatus, xhr) {
+            common.showAlert(data);
+             location.href = "@Url.Action("Index", "Degree")";
+        }
+        function failure(data, textStatus, xhr) {
+            common.showErrorAlert();
+        }
+    </script>
+}
+

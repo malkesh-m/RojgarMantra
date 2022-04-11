@@ -1,0 +1,109 @@
+﻿<html>
+
+<head>
+    <style>
+        .container {
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 1000px;
+            margin: auto;
+            text-align: end;
+            font-family: arial;
+            color: black;
+            background-color: white;
+        }
+
+        .h4 {
+            position: center;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+    @using PagedList;
+    @using PagedList.Mvc;
+
+
+    @model IEnumerable<RojgarMantra.Models.statedetails>
+
+    @{
+        ViewBag.Title = "ViewStatedetails";
+    }
+
+
+    <div class="main-content-header container-fluid p-4">
+        <div>
+            <h6 class="main-content-title tx-18 mg-b-5 mg-t-7"></h6>
+        </div>
+        <div class="btn-list">
+            <a id="BtnRefresh" class="btn btn-rounded btn-success"><i class="fe fe-plus-circle mr-2"></i>Refresh</a>
+            <a href="/ManageState/AddState" class="btn btn-rounded btn-primary"><i class="fe fe-plus-circle mr-2"></i>Add</a>
+        </div>
+
+
+
+    </div>
+    <div class="text-right">
+
+        @using (Html.BeginForm())
+        {
+            <p>
+                Find by name: @Html.TextBox("SearchString")
+                <input type="submit" value="Search" />
+            </p>
+        }
+    </div>
+
+    <h2>STATE DETAILS</h2>
+
+    <div class="card">
+    <div class="card-body">
+        <table class="table table-borderless">
+            <tr>
+
+                <th class="font-weight-bold">
+                    @Html.DisplayName("Action")
+                </th>
+                <th class="font-weight-bold">
+                    @Html.DisplayName("Country Name")
+                </th>
+                <th class="font-weight-bold">
+                    @Html.ActionLink("state Name", "ViewStatedetails", new { Sorting_Order = ViewBag.SortingName })
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+
+                using (Html.BeginForm("Delete", "ManageState", new { id = item.StateID }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <tr>
+
+                        <td>
+                            @Html.ActionLink("Edit", "EditState", new { id = item.StateID }, new { @class = "btn btn-info" }) |
+
+                            <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete record = @item.StateName');" />
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CountryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StateName)
+                        </td>
+
+                    </tr>
+                }
+            }
+
+        </table>
+        </div>
+        </div>
+</body>
+</html>

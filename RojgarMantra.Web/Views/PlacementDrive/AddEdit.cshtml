@@ -1,0 +1,206 @@
+﻿@model RojgarMantra.Core.Models.PlacementDriveAddEditModel
+
+@{
+    ViewBag.Title = "PlacementDrive AddEdit";
+}
+
+<div class="main-content-header container-fluid p-4">
+    <div>
+        <h6 class="main-content-title tx-18 mg-b-5 mg-t-7">PlacementDrive Add/Edit</h6>
+    </div>
+</div>
+
+@using (Ajax.BeginForm("AddEdit", "PlacementDrive", new AjaxOptions { HttpMethod = "POST", OnSuccess = "success", OnFailure = "failure" }, new { enctype = "multipart/form-data" }))
+{
+    <div class="card">
+        <div class="card-body">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id)
+            <div class="row">
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.JobTitle, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.JobTitle, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.JobTitle, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.NumberOfVacancies, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.NumberOfVacancies, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.NumberOfVacancies, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.FromDate, htmlAttributes: new { @class = "control-label"})
+                    <div >
+                        <input type="text" name="FromDate" id="FromDate" class="form-control">
+                        @Html.ValidationMessageFor(model => model.FromDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.ToDate, htmlAttributes: new { @class = "control-label"})
+                    <div >
+                        <input type="text" name="ToDate" id="ToDate" class="form-control">
+                        @Html.ValidationMessageFor(model => model.ToDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Package, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.Package, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Package, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.RequiredQualification, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.DropDownListFor(model => model.RequiredQualification,new SelectList(ViewBag.Degree,"Id","Name"),"Select",  htmlAttributes: new { @class = "form-control" } )
+                        @Html.ValidationMessageFor(model => model.RequiredQualification, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.SelectionProcess, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.DropDownListFor(model => model.SelectionProcess,new SelectList(ViewBag.selProcess,"Id","Name"),"Select", htmlAttributes: new { @class = "form-control" } )
+                        @Html.ValidationMessageFor(model => model.SelectionProcess, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.PrimaryCoOrdinatorName, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.PrimaryCoOrdinatorName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PrimaryCoOrdinatorName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.CoOrdinatorNumber, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.CoOrdinatorNumber, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CoOrdinatorNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.CoOrdinatorAlternateNumber, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.CoOrdinatorAlternateNumber, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CoOrdinatorAlternateNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Venue, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.Venue, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Venue, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.EligibleCoursesCertifications, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.EligibleCoursesCertifications, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.EligibleCoursesCertifications, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.JobLocation, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.JobLocation, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.JobLocation, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Timings, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.Timings, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Timings, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="box-footer text-left">
+                <input type="submit" class="btn btn-primary" value="Save" />
+                <a href="@Url.Action("Index", "PlacementDrive")" class="btn btn-info">Cancel</a>
+            </div>
+        </div>
+    </div>
+}
+@section scripts{
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+    <script>
+        function success(data, textStatus, xhr) {
+            common.showAlert(data);
+            location.href = "@Url.Action("Index", "PlacementDrive")";
+        }
+        function failure(data, textStatus, xhr) {
+            common.showErrorAlert();
+        }
+        $(function () {
+
+            $("#FromDate").datepicker({
+                dateFormat: 'dd-mm-yy',
+            });
+
+            $("#ToDate").datepicker({
+                dateFormat: 'dd-mm-yy',
+            });
+            if (@Model.Id != 0) {
+
+                $("#FromDate").datepicker('setDate', '@Model.FromDate.ToString("dd-MM-yyyy")');
+
+                $("#ToDate").datepicker('setDate', '@Model.ToDate.ToString("dd-MM-yyyy")');
+            }
+
+            $("#ToDate").change(function () {
+                event = event || window.event || event.srcElement;
+                var return_val = true;
+                to = $("#ToDate").val();
+                to = to.split("-");
+                var from = $("#FromDate").val();
+                from = from.split("-");
+                if (to[2] < from[2]) {
+                    $("#ToDate").next('span').text("To date must not be less than from date.").show();
+                    return_val = false;
+                }
+                else if (to[1] < from[1] && to[2] <= from[2]) {
+                    $("#ToDate").next('span').text("To date must not be less than from date.").show();
+                    return_val = false;
+                }
+                else if (to[0] < from[0] && to[2] <= from[2] && to[1] <= from[1]) {
+                    $("#ToDate").next('span').text("To date must not be less than from date.").show();
+                    return_val = false;
+                }
+                else {
+                    $("#ToDate").next('span').hide();
+                    return_val = false;
+                }
+            });
+           // jobSeekerAddEdit.init();
+        });
+       
+
+    </script>
+}

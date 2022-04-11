@@ -1,0 +1,49 @@
+===================================================
+Company Login
+dev.net@omsoftware.net --username
+Dev@20#20!  --password
+====================================================
+TimeDoctor
+dev.net@omsoftware.net --username
+Qwerty@123   --password
+===================================================
+Mailbox
+https://mail.ionos.com/
+====================================================
+Web UI
+https://xd.adobe.com/view/22d4066d-c9a5-4624-a16b-11d950cfd6b5-7787/
+=====================================================
+bitbucket repository
+https://Netdev12@bitbucket.org/dotnet_OMS/rojgarmantra.git
+======================================================
+Mysql DB
+#E2p90bc  --dbpassword   
+mantradmin  --dbusername 
+dbname - rojgarmantra  
+port : 3306
+host: rojgarmantra.omsoftware.co 
+======================================================
+Website
+mantradmin@rojgarmantra.omsoftware.co:3306
+=======================================================
+Android APK
+http://android.codesrv.com/rozgarmantra/rojgarmantra_10_02_2021.apk
+=======================================================
+Login - Admin Portal
+alex@localhost.com
+johndoe@localhost.com
+P@ssw0rd1!
+======================================================
+Worksheet
+https://docs.google.com/spreadsheets/d/12kphkvOY8gkAoo3Z3ARGkdDXYVv3mBFxAeutYXen2BY/edit?usp=sharing
+=======================================================
+Trello
+========================================================
+Live
+http://rojgarmantra.omsoftware.co/
+========================================================
+Reference Project
+Admin Url: https://jobastra.in/manage
+Username: support@jobastra.in
+Password: 123   
+========================================================

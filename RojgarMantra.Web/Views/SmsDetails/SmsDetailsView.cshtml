@@ -1,0 +1,66 @@
+﻿
+        @model RojgarMantra.Models.SmsDetails
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>SmsDetails</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group row ">
+                    <label class="col-sm-4 col-form-label">Username</label>
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row ">
+                    <label class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row ">
+                    <label class="col-sm-4 col-form-label">Sender Name</label>
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.SenderName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SenderName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row ">
+                    <label class="col-sm-4 col-form-label">URL</label>
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.URL, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.URL, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row ">
+                    <label class="col-sm-4 col-form-label">Credit</label>
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.Credit, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Credit, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row ">
+                    <div class="col-md-offset-2 col-md-6">
+                        <center>
+                            <button class="btn btn-primary" id="btn_back">Back</button>
+                            <button type="submit" class="btn btn-success mr-2">Submit</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        }
+
+        
+        </div>
+</div>

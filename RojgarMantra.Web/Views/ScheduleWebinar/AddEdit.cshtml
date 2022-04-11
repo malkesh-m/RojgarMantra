@@ -1,0 +1,161 @@
+﻿@model RojgarMantra.Core.Models.ScheduleWebinarAddEditModel
+
+@{
+    ViewBag.Title = "Schedule Webinar AddEdit";
+}
+
+
+<div class="main-content-header container-fluid p-4">
+    <div>
+        <h6 class="main-content-title tx-18 mg-b-5 mg-t-7">Schedule Webinar Add/Edit</h6>
+    </div>
+</div>
+
+@using (Ajax.BeginForm("AddEdit", "ScheduleWebinar", new AjaxOptions { HttpMethod = "POST", OnSuccess = "success", OnFailure = "failure" }))
+{
+    <div class="card">
+        <div class="card-body">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id)
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label " })
+                        <div>
+                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PresenterName, htmlAttributes: new { @class = "control-label " })
+                        <div>
+                            @Html.EditorFor(model => model.PresenterName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PresenterName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PresenterContactNumber, htmlAttributes: new { @class = "control-label " })
+                        <div>
+                            @Html.EditorFor(model => model.PresenterContactNumber, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PresenterContactNumber, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label " })
+                        <div>
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.VirtualLink, htmlAttributes: new { @class = "control-label " })
+                        <div>
+                            @Html.EditorFor(model => model.VirtualLink, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.VirtualLink, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label " })
+                        <div>
+                            <input type="text" name="Date" id="Date" class="form-control">
+                            @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PresenterEmail, htmlAttributes: new { @class = "control-label " })
+                        <div>
+                            @Html.EditorFor(model => model.PresenterEmail, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PresenterEmail, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.WorkExperience, htmlAttributes: new { @class = "control-label " })
+                        <div>
+                            @Html.EditorFor(model => model.WorkExperience, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.WorkExperience, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PhysicalVirtual, htmlAttributes: new { @class = "control-label " })
+                        <div>
+                            @Html.EditorFor(model => model.PhysicalVirtual, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PhysicalVirtual, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.StartTime, htmlAttributes: new { @class = "control-label " })
+                        <div>
+                            <input type="text" name="StartTime" id="StartTime" class="form-control">
+                            @Html.ValidationMessageFor(model => model.StartTime, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EndTime, htmlAttributes: new { @class = "control-label " })
+                        <div>
+                            <input type="text" name="EndTime" id="EndTime" class="form-control">
+                            @Html.ValidationMessageFor(model => model.EndTime, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="box-footer text-left">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <a href="@Url.Action("Index", "ScheduleWebinar")" class="btn btn-info">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+@section scripts{
+    <script src="~/Scripts/jquery.timepicker.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.js"></script>
+    <script>
+        function success(data, textStatus, xhr) {
+            common.showAlert(data);
+             location.href = "@Url.Action("Index", "ScheduleWebinar")";
+        }
+        function failure(data, textStatus, xhr) {
+            common.showErrorAlert();
+        }
+         $(function () {
+            $("#Date").datepicker({
+                dateFormat: 'dd-mm-yy',
+            });
+             $("#StartTime").timepicker({
+                // timeFormat: 'hh:mm TT'
+                 timeFormat: 'h:i A'
+            });
+
+             $("#EndTime").timepicker({
+                 timeFormat: 'h:i A'
+            });
+            if (@Model.Id != 0) {
+
+                $("#Date").datepicker('setDate', '@Model.Date.ToString("dd-MM-yyyy")');
+
+
+                $("#StartTime").datepicker('setTime', '@Model.StartTime.ToString("h:mm tt")');
+
+                $("#EndTime").datepicker('setTime', '@Model.EndTime.ToString("h:mm tt")');
+            }
+
+
+           // jobSeekerAddEdit.init();
+        });
+    </script>
+}

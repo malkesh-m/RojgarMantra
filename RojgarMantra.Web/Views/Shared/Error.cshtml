@@ -1,0 +1,16 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    //Layout = null;
+    ViewBag.Title = "Error";
+}
+
+<!--Main Error Wrapper -->
+<div class="page h-100">
+    <div class="main-error-wrapper">
+        <h1>Error.</h1>
+        <h2>An error occurred while processing your request. </h2>
+        <a class="btn btn-outline-indigo" href="@Url.Action("Index","Home")">Back to Home</a>
+    </div>
+</div>
+<!--/Main Error Wrapper -->

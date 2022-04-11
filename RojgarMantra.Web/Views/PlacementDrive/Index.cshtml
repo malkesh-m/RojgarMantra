@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Placement Drive List";
+}
+<!--Main Content Header-->
+<div class="main-content-header container-fluid p-4">
+    <div>
+        <h6 class="main-content-title tx-18 mg-b-5 mg-t-7">Placement Drive List</h6>
+    </div>
+    <div class="btn-list">
+        <a id="BtnRefresh" class="btn btn-rounded btn-success"><i class="fe fe-plus-circle mr-2"></i>Refresh</a>
+        <a href='/PlacementDrive/AddEdit?Id=0' class="btn btn-rounded btn-primary"><i class="fe fe-plus-circle mr-2"></i>Add</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mg-b-20">
+                <div class="card-body" style="overflow:auto">
+                    <div class="table-responsive">
+                        <table id="TblPlacementDrive" class="table nowrap text-md-nowrap" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Actions</th>
+                                    <th>JobTitle</th>
+                                    <th>PrimaryCoOrdinatorName</th>
+                                    <th>CoOrdinatorNumber</th>
+                                    <th>NumberOfVacancies</th>
+                                    <th>RequiredQualification</th>
+                                    <th>JobLocation</th>
+                                    <th>FromDate</th>
+                                    <th>ToDate</th>
+                                    <th>SelectionProcess</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script src="~/Js/PlacementDrive/index.js"></script>
+    <script>
+        $(function () {
+            PlacementDriveIndex.init();
+        });
+    </script>
+}
+
+

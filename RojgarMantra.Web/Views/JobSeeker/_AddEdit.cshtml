@@ -1,0 +1,284 @@
+﻿@model RojgarMantra.Core.Models.UserJobSeekerAddEditModel
+
+<form id="FrmJobSeekerAddEdit">
+
+    <div class="box">
+        <div class="box-body">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id)
+            <div class="form-group">
+                <label>FirstName*</label>
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>MiddleName*</label>
+                @Html.TextBoxFor(m => m.MiddleName, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.MiddleName, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>LastName*</label>
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>MarriedStatus*</label>
+                @Html.TextBoxFor(m => m.MarriedStatus, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.MarriedStatus, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>Gender*</label>
+                @Html.TextBoxFor(m => m.Gender, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.Gender, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>Email*</label>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>Password*</label>
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @type = "password" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>DateOfBirth*</label>
+                @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control date-picker", @type = "date" })
+                @Html.ValidationMessageFor(m => m.DateOfBirth, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>PhysicallyChallenged*</label>
+                @Html.CheckBoxFor(m => m.PhysicallyChallenged, new { @class = "form-control", @type = "checkbox" })
+                @Html.ValidationMessageFor(m => m.PhysicallyChallenged, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>ContactNumber*</label>
+                @Html.TextBoxFor(m => m.ContactNumber, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.ContactNumber, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>AlternateContactNumber*</label>
+                @Html.TextBoxFor(m => m.AlternateContactNumber, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.AlternateContactNumber, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>Country*</label>
+                @Html.TextBoxFor(m => m.Country, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.Country, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>State*</label>
+                @Html.TextBoxFor(m => m.State, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.State, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>City*</label>
+                @Html.TextBoxFor(m => m.City, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>PermanentLocation*</label>
+                @Html.TextBoxFor(m => m.PermanentLocation, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.PermanentLocation, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>PrefferredLocation*</label>
+                @Html.TextBoxFor(m => m.PrefferredLocation, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.PrefferredLocation, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>CurrentAddress*</label>
+                @Html.TextBoxFor(m => m.CurrentAddress, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.CurrentAddress, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>CompanyName*</label>
+                @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.CompanyName, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>Role*</label>
+                @Html.TextBoxFor(m => m.Role, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.Role, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>Designation*</label>
+                @Html.TextBoxFor(m => m.Designation, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.Designation, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>TotalExperience*</label>
+                @Html.TextBoxFor(m => m.TotalExperience, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.TotalExperience, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>Skills*</label>
+                @Html.TextBoxFor(m => m.Skills, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.Skills, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>CurrentCTCLac*</label>
+                @Html.TextBoxFor(m => m.CurrentCTCLac, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.CurrentCTCLac, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>CurrentCTCThousand*</label>
+                @Html.TextBoxFor(m => m.CurrentCTCThousand, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.CurrentCTCThousand, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>ExpectedCurrentCTCThousand*</label>
+                @Html.TextBoxFor(m => m.ExpectedCurrentCTCThousand, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.ExpectedCurrentCTCThousand, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>ExpectedCurrentCTCLac*</label>
+                @Html.TextBoxFor(m => m.ExpectedCurrentCTCLac, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.ExpectedCurrentCTCLac, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>NegotiableExpectedCTC*</label>
+                @Html.TextBoxFor(m => m.NegotiableExpectedCTC, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.NegotiableExpectedCTC, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>NoticePeriod*</label>
+                @Html.TextBoxFor(m => m.NoticePeriod, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.NoticePeriod, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>NegotiableNoticePeriod*</label>
+                @Html.CheckBoxFor(m => m.NegotiableNoticePeriod, new { @class = "form-control", @type = "checkbox" })
+                @Html.ValidationMessageFor(m => m.NegotiableNoticePeriod, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>PrevCompanyName*</label>
+                @Html.TextBoxFor(m => m.PrevCompanyName, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.PrevCompanyName, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>From*</label>
+                @Html.TextBoxFor(m => m.From, new { @class = "form-control", @type = "date" })
+                @Html.ValidationMessageFor(m => m.From, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>To*</label>
+                @Html.TextBoxFor(m => m.To, new { @class = "form-control", @type = "date" })
+                @Html.ValidationMessageFor(m => m.To, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>Experience*</label>
+                @Html.PasswordFor(m => m.Experience, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.Experience, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>SSCMarks*</label>
+                @Html.TextBoxFor(m => m.SSCMarks, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.SSCMarks, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>SSCCompletionYear*</label>
+                @Html.TextBoxFor(m => m.SSCCompletionYear, String.Format("{0:yyyy}", Model.SSCCompletionYear.ToShortDateString()), new { @class = "form-control", @type = "date" })
+                @Html.ValidationMessageFor(m => m.SSCCompletionYear, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>HSCMarks*</label>
+                @Html.TextBoxFor(m => m.HSCMarks, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.HSCMarks, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>HSCCompletionYear*</label>
+                @Html.TextBoxFor(m => m.HSCCompletionYear, "{0:yyyy}", new { @class = "form-control", @type = "date" })
+                @Html.ValidationMessageFor(m => m.HSCCompletionYear, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>DegreeName*</label>
+                @Html.TextBoxFor(m => m.DegreeName, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.DegreeName, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>GraduationMarks*</label>
+                @Html.TextBoxFor(m => m.GraduationMarks, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.GraduationMarks, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>GraduationCompletionYear*</label>
+                @Html.TextBoxFor(m => m.GraduationCompletionYear, new { @class = "form-control", @type = "date" })
+                @Html.ValidationMessageFor(m => m.GraduationCompletionYear, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>GraduationCompletionInstituteUniversity*</label>
+                @Html.TextBoxFor(m => m.GraduationCompletionInstituteUniversity, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.GraduationCompletionInstituteUniversity, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>PostDegreeName*</label>
+                @Html.TextBoxFor(m => m.PostDegreeName, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.PostDegreeName, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>PostGraduationMarks*</label>
+                @Html.TextBoxFor(m => m.PostGraduationMarks, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.PostGraduationMarks, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>PostGraduationCompletionYear*</label>
+                @Html.TextBoxFor(m => m.PostGraduationCompletionYear, new { @class = "form-control", @type = "date" })
+                @Html.ValidationMessageFor(m => m.PostGraduationCompletionYear, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>PostGraduationCompletionInstituteUniversity*</label>
+                @Html.TextBoxFor(m => m.PostGraduationCompletionInstituteUniversity, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.PostGraduationCompletionInstituteUniversity, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>CourseName*</label>
+                @Html.PasswordFor(m => m.CourseName, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.CourseName, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>CourseCompletionDuration*</label>
+                @Html.TextBoxFor(m => m.CourseCompletionDuration, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.CourseCompletionDuration, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>SelectLanguage*</label>
+                @Html.TextBoxFor(m => m.SelectLanguage, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.SelectLanguage, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>Read*</label>
+                @Html.CheckBoxFor(m => m.Read, new { @class = "form-control", @type = "checkbox" })
+                @Html.ValidationMessageFor(m => m.Read, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>Write*</label>
+                @Html.CheckBoxFor(m => m.Write, new { @class = "form-control", @type = "checkbox" })
+                @Html.ValidationMessageFor(m => m.Write, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>Speak*</label>
+                @Html.CheckBoxFor(m => m.Speak, new { @class = "form-control", @type = "checkbox" })
+                @Html.ValidationMessageFor(m => m.Speak, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label>Resume*</label>
+                @Html.TextBoxFor(m => m.Resume, new { @class = "form-control", @type = "text" })
+                @Html.ValidationMessageFor(m => m.Resume, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="box-footer text-right">
+            <input type="button" id="BtnSave" class="btn btn-warning" value="Save" />
+        </div>
+    </div>
+</form>
+<script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.js"></script>
+<script>
+    $(function () {
+        //$(".date-picker").datepicker();
+        $(".date-picker").datepicker({
+            dateFormat: 'yyyy',
+        });
+        jobSeekerAddEdit.init();
+    });
+</script>

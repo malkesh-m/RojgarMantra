@@ -1,0 +1,84 @@
+﻿@model RojgarMantra.Core.Models.SMTPDetailsAddEditModel
+
+@{
+    ViewBag.Title = "SMTP Details AddEdit";
+}
+
+<div class="main-content-header container-fluid p-4">
+    <div>
+        <h6 class="main-content-title tx-18 mg-b-5 mg-t-7">SMTP Details Add/Edit</h6>
+    </div>
+</div>
+
+@using (Ajax.BeginForm("Index", "SMTPDetails", new AjaxOptions { HttpMethod = "POST", OnSuccess = "success", OnFailure = "failure" }))
+{
+    <div class="card">
+        <div class="card-body">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id)
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group col-md-10">
+                @Html.LabelFor(model => model.Host, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.Host, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Host, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group col-md-10">
+                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group col-md-10">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control",@type = "password" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group col-md-10">
+                @Html.LabelFor(model => model.Port, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.Port, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Port, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group col-md-10">
+                @Html.LabelFor(model => model.SenderName, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.SenderName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SenderName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group col-md-10">
+                @Html.LabelFor(model => model.SenderEmail, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.SenderEmail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SenderEmail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <a href="@Url.Action("Index", "SMTPDetails")" class="btn btn-info">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section scripts{
+
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.js"></script>
+    <script>
+        function success(data, textStatus, xhr) {
+            common.showAlert(data);
+             location.href = "@Url.Action("Index", "Home")";
+        }
+        function failure(data, textStatus, xhr) {
+            common.showErrorAlert();
+        }
+    </script>
+}
+

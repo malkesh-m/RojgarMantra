@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RojgarMantra.Web", "RojgarMantra.Web\RojgarMantra.Web.csproj", "{8099596E-6A90-47E6-8F22-A5AFBE6951FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RojgarMantra.Core", "RojgarMantra.Core\RojgarMantra.Core.csproj", "{E51CFB00-5FE7-4066-8E9B-134735665777}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RojgarMantra.Data", "RojgarMantra.Data\RojgarMantra.Data.csproj", "{8E8D0895-79BB-4800-9ED9-23FF83214926}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RojgarMantra.Repo", "RojgarMantra.Repo\RojgarMantra.Repo.csproj", "{5A9662A2-B48F-4E2D-9944-E03D84B2925E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RojgarMantra.Service", "RojgarMantra.Service\RojgarMantra.Service.csproj", "{70165FB3-56C7-4AAB-931F-08408A4A680B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8099596E-6A90-47E6-8F22-A5AFBE6951FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8099596E-6A90-47E6-8F22-A5AFBE6951FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8099596E-6A90-47E6-8F22-A5AFBE6951FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8099596E-6A90-47E6-8F22-A5AFBE6951FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E51CFB00-5FE7-4066-8E9B-134735665777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E51CFB00-5FE7-4066-8E9B-134735665777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E51CFB00-5FE7-4066-8E9B-134735665777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E51CFB00-5FE7-4066-8E9B-134735665777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E8D0895-79BB-4800-9ED9-23FF83214926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E8D0895-79BB-4800-9ED9-23FF83214926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E8D0895-79BB-4800-9ED9-23FF83214926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E8D0895-79BB-4800-9ED9-23FF83214926}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A9662A2-B48F-4E2D-9944-E03D84B2925E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A9662A2-B48F-4E2D-9944-E03D84B2925E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A9662A2-B48F-4E2D-9944-E03D84B2925E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A9662A2-B48F-4E2D-9944-E03D84B2925E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70165FB3-56C7-4AAB-931F-08408A4A680B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70165FB3-56C7-4AAB-931F-08408A4A680B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70165FB3-56C7-4AAB-931F-08408A4A680B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70165FB3-56C7-4AAB-931F-08408A4A680B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64010A83-E7BC-4494-8A73-2FD09005B0B3}
+	EndGlobalSection
+EndGlobal

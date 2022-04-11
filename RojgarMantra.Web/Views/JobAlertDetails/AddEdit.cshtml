@@ -1,0 +1,150 @@
+﻿@model RojgarMantra.Core.Models.JobAlertDetailsAddEditModel
+
+@{
+    ViewBag.Title = "AddEdit";
+}
+
+<div class="main-content-header container-fluid p-4">
+    <div>
+        <h6 class="main-content-title tx-18 mg-b-5 mg-t-7">Job Alert Details Add/Edit</h6>
+    </div>
+</div>
+
+@using (Ajax.BeginForm("AddEdit", "JobAlertDetails", new AjaxOptions { HttpMethod = "POST", OnSuccess = "success", OnFailure = "failure" }))
+{
+    <div class="card">
+        <div class="card-body">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id)
+            <div class="row">
+
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Designation, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.Designation, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.YearOfExperience, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.YearOfExperience, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.YearOfExperience, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.NameOfJobAlert, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.NameOfJobAlert, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.NameOfJobAlert, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.JobCategory, htmlAttributes: new { @class = "control-label" })
+                    <div>
+                        @Html.DropDownListFor(model => model.JobCategory, new SelectList(ViewBag.JobCategory, "Id", "Name"), "Select", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.JobCategory, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.WorkExperience, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.WorkExperience, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.WorkExperience, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.Role, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Skills, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.Skills, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Skills, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.NoticePeriod, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.NoticePeriod, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.NoticePeriod, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.ExpectedCTCLac, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.ExpectedCTCLac, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ExpectedCTCLac, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.ExpectedCTCThousand, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.ExpectedCTCThousand, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ExpectedCTCThousand, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.NegotiableExpectedCTC, htmlAttributes: new { @class = "control-label" })
+                    <div >
+                        @Html.EditorFor(model => model.NegotiableExpectedCTC, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.NegotiableExpectedCTC, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group col-md-6">
+                <div class="box-footer text-left">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <a href="@Url.Action("Index", "JobAlertDetails")" class="btn btn-info">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+@section scripts{
+
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery-ui-timepicker-addon.min.js"></script>
+    <script>
+        function success(data, textStatus, xhr) {
+            common.showAlert(data);
+             location.href = "@Url.Action("Index", "JobAlertDetails")";
+        }
+        function failure(data, textStatus, xhr) {
+            common.showErrorAlert();
+        }
+    </script>
+}

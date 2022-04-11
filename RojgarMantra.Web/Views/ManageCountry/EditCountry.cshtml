@@ -1,0 +1,58 @@
+﻿<html>
+<body>
+
+
+
+    @model RojgarMantra.Models.CountryAdd
+
+    @{
+        ViewBag.Title = "EditCountry";
+    }
+
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+       
+
+
+        
+
+        <div class="card">
+            <div class="card-body">
+                <h4>Add New Country</h4>
+
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.CountryID)
+                
+
+                <div class="form-group">
+                    @Html.DisplayName("Country Name")
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CountryName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CountryName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <a href='/ManageCountry/CountryDetails' class="btn btn-rounded btn-info">Cancle</a>
+                        @*<input type="submit" value="Cancle" class="btn btn-info" />*@
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    }
+
+
+
+</body>
+</html>

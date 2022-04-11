@@ -1,0 +1,73 @@
+﻿@model RojgarMantra.Models.RazorpayDetails
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>RazorpayDetails</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group row">
+        <label class="col-sm-4 col-form-label">Name</label>
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-4 col-form-label">Contact No</label>
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.Contact, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Contact, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-4 col-form-label">Email Id</label>
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-4 col-form-label">Password</label>
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-4 col-form-label">Account Type</label>
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.AccountType, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AccountType, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-4 col-form-label">Account No.</label>
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.AccountNO, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AccountNO, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row ">
+        <label class="col-sm-4 col-form-label">Visible On App</label>
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.Visible, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Visible, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <center>
+        <button class="btn btn-primary" id="btn_back">Back</button>
+        <button type="submit" class="btn btn-success mr-2">Submit</button>
+    </center>
+    </div>
+}
+

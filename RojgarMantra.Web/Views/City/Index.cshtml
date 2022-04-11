@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "City List";
+}
+<!--Main Content Header-->
+<div class="main-content-header container-fluid p-4">
+    <div>
+        <h6 class="main-content-title tx-18 mg-b-5 mg-t-7">City List</h6>
+    </div>
+    <div class="btn-list">
+        <a id="BtnRefresh" class="btn btn-rounded btn-success"><i class="fe fe-plus-circle mr-2"></i>Refresh</a>
+        <a href='/City/AddEdit?Id=0' class="btn btn-rounded btn-primary"><i class="fe fe-plus-circle mr-2"></i>Add</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mg-b-20">
+                <div class="card-body" style="overflow:auto">
+                    <div class="table-responsive">
+                        <table id="TblCity" class="table nowrap text-md-nowrap" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Actions</th>
+                                    <th>Name</th>
+                                    @* <th>CreatedBy</th>
+                                        <th>CreatedOn</th>
+                                        <th>ModifiedBy</th>
+                                        <th>ModifiedOn</th>*@
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script src="~/Js/City/index.js"></script>
+    <script>
+        $(function () {
+            CityIndex.init();
+        });
+    </script>
+}
+
+

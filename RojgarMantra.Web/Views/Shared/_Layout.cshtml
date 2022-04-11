@@ -1,0 +1,1130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="Description" content="HTML5 Bootstrap Admin Template">
+    <meta name="author" content="Spruko Technologies Private Limited">
+    <meta name="keywords" content="dashboard template,bootstrap dashboard,admin template,Sales Dashboard,sales report dashboard,sales metrics dashboard,sales analytics dashboard,sales manager dashboard,best sales dashboards,sales performance dashboard,power bi sales dashboard,bootstrap admin template,bootstrap admin template responsive,bootstrap admin dashboard,bootstrap admin template premium,bootstrap admin panel template,bootstrap 4 dashboard template">
+
+    <!-- Favicon -->
+    <link rel="icon" src="~/Content/Images/favicon.ico" type="image/x-icon" />
+    <!-- Title -->
+    <title>RojgarMantra - @ViewBag.Title</title>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="~/Content/all.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Ionicons -->
+
+    <link href="~/Content/ionicons.min.css" rel="stylesheet" />
+
+    <!-- Typicons -->
+    <link href="~/Content/typicons.css" rel="stylesheet" />
+
+    <!-- Sidebar css -->
+    <link href="~/Content/sidebar.css" rel="stylesheet" />
+
+    <!-- Side menu css-->
+    <link href="~/Content/sidemenu.css" rel="stylesheet" />
+
+    <!-- Custom Scroll bar-->
+    <link href="~/Content/jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+    <!-- Select2 css -->
+    <link href="~/Content/select2.min.css" rel="stylesheet" />
+
+    <!-- morris css -->
+    <link href="~/Content/morris.css" rel="stylesheet" />
+
+    <!--Bootstrap-daterangepicker css-->
+    <link href="~/Content/daterangepicker.css" rel="stylesheet" />
+
+    <!-- Default Style -->
+    <link href="~/Content/dashboard-two.css" rel="stylesheet" />
+    <link href="~/Content/dashboard-two-dark.css" rel="stylesheet" />
+
+    <!-- Icon Style -->
+    <link href="~/Content/icons.css" rel="stylesheet" />
+
+    <!-- Lightslider Css -->
+    <link href="~/Content/lightslider.min.css" rel="stylesheet" />
+
+    <!-- Crypto Css -->
+    <link href="~/Content/cryptofont.min.css" rel="stylesheet" />
+
+    <!-- Flag Css -->
+    <link href="~/Content/flag-icon.min.css" rel="stylesheet" />
+
+    <!-- SweetAlert Css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet" />
+    <!--TimePicker-->
+    <link href="~/Content/jquery.timepicker.min.css" rel="stylesheet" />
+    <!-- Bootstrap Css -->
+    <!--<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />-->
+    <!-- DataTables Css -->
+    <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.css" />-->
+    <link href="~/Content/datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+   @* <link rel="stylesheet" href="~/Contents/datatable/css/buttons.bootstrap4.min.css">*@
+    <link href="~/Content/datatable/responsive.bootstrap4.min.css" rel="stylesheet" />
+
+</head>
+
+<body class="main-body app sidebar-mini">
+
+    <!-- Loader -->
+    <div id="loading">
+        <img src="~/Content/Images/loader.svg" class="loader-img" alt="Loader" />
+    </div>
+
+    <!--App Sidebar-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+
+        <!--logo-->
+        <div class="side-header">
+            <a class="main-logo desktop-logo" href="@Url.Action("Index","Home")">
+                <img src="~/Content/Images/logo-3.png" alt="logo" width="180" />
+            </a>
+            <a class="main-logo mobile-logo" href="@Url.Action("Index","Home")">
+                <img src="~/Content/Images/icon-3.png" alt="logo" width="180" />
+            </a>
+            <a class="main-logo dark-theme-logo" href="index.html">
+                <img src="~/Content/Images/logo-2-dark.png" alt="logo" />
+            </a>
+            <!-- sidebar-toggle-->
+            <div class="app-sidebar__toggle" data-toggle="sidebar">
+                <a class="open-toggle" href="#"><i class="header-icons" data-eva="menu-outline"></i></a>
+                <a class="close-toggle" href="#"><i class="header-icons" data-eva="close-outline"></i></a>
+            </div>
+        </div>
+        <!--/logo-->
+
+        <div class="app-sidebar__user clearfix">
+            <div class="dropdown user-pro-body">
+                <div class="sideuser-img">
+                    <img src="~/Content/Images/userImage.jpg" />
+                </div>
+                <div class="user-info">
+                    <h2 class="app-sidebar__user-name">@Session["Email"] <i class="fe fe-check-circle ml-1 text-success tx-11"></i></h2>
+                    <span class="app-sidebar__title">Administrator</span>
+                </div>
+            </div>
+        </div>
+        <ul class="side-menu">
+            <li class="slide slide-item-main">
+                <a class="side-menu__item" href="@Url.Action("Index","Home")">
+                    <i class="side-menu__icon" data-eva="monitor-outline"></i>
+                    <span class="side-menu__label">Dashboard</span>
+                </a>
+            </li>
+            @*            <li class="slide slide-item-main">
+            <a class="side-menu__item" href="@Url.Action("Index","Home")"><i class="side-menu__icon" data-eva="monitor-outline"></i><span class="side-menu__label">Dashboard</span></a>
+        </li>*@
+            <li class="slide">
+                <a class="side-menu__item" href="#">
+                    <i class="side-menu__icon" data-eva="file-text-outline"></i>
+                    <span class="side-menu__label">Manage Resources</span>
+                    <i class=" fa side-menu__icon" data-eva="arrow-ios-forward-outline" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"></i>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="#">
+                    <i class="side-menu__icon" data-eva="bar-chart-2-outline"></i>
+                    <span class="side-menu__label">Manage Banner/Advertisement</span>
+                </a>
+
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","JobSeeker")">
+                    <i class="side-menu__icon" data-eva="pin-outline"></i>
+                    <span class="side-menu__label">Manage Candidates</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","Employer")">
+                    <i class="side-menu__icon" data-eva="layout-outline"></i>
+                    <span class="side-menu__label">Manage Employer</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","TrainingInstitute")">
+                    <i class="side-menu__icon" data-eva="grid-outline"></i>
+                    <span class="side-menu__label">Manage Training Institutes</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","SelectionProcess")">
+                    <i class="side-menu__icon" data-eva="grid-outline"></i>
+                    <span class="side-menu__label">Manage Selection Process</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","Role")">
+                    <i class="side-menu__icon" data-eva="grid-outline"></i>
+                    <span class="side-menu__label">Manage Role</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","Designation")">
+                    <i class="side-menu__icon" data-eva="grid-outline"></i>
+                    <span class="side-menu__label">Manage Designation</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="#">
+                    <i class="side-menu__icon" data-eva="briefcase-outline"></i>
+                    <span class="side-menu__label">Manage Assessments</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="#">
+                    <i class="side-menu__icon" data-eva="stop-circle-outline"></i>
+                    <span class="side-menu__label">Manage Career Oriented Course</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","PlacementDrive")">
+                    <i class="side-menu__icon" data-eva="email-outline"></i>
+                    <span class="side-menu__label">Manage Placement Drives</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","User")">
+                    <i class="side-menu__icon" data-eva="cube-outline"></i>
+                    <span class="side-menu__label">Manage Staff</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="#">
+                    <i class="side-menu__icon" data-eva="book-outline"></i>
+                    <span class="side-menu__label">Manage Subscription</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","JobCategory")">
+                    <i class="side-menu__icon" data-eva="shopping-cart-outline"></i>
+                    <span class="side-menu__label">Manage Job Category</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","JobDetails")">
+                    <i class="side-menu__icon" data-eva="compass-outline"></i>
+                    <span class="side-menu__label">Manage Jobs</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","Degree")">
+                    <i class="side-menu__icon" data-eva="browser-outline"></i>
+                    <span class="side-menu__label">Manage Qualifications</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","Country")">
+                    <i class="side-menu__icon" data-eva="browser-outline"></i>
+                    <span class="side-menu__label">Manage Country</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","State")">
+                    <i class="side-menu__icon" data-eva="browser-outline"></i>
+                    <span class="side-menu__label">Manage State</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","District")">
+                    <i class="side-menu__icon" data-eva="browser-outline"></i>
+                    <span class="side-menu__label">Manage District</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="@Url.Action("Index","City")">
+                    <i class="side-menu__icon" data-eva="browser-outline"></i>
+                    <span class="side-menu__label">Manage City</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="#">
+                    <i class="side-menu__icon" data-eva="browser-outline"></i>
+                    <span class="side-menu__label">Manage Website Content</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="#">
+                    <i class="side-menu__icon" data-eva="browser-outline"></i>
+                    <span class="side-menu__label">Manage App Content</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" href="#">
+                    <i class="side-menu__icon" data-eva="browser-outline"></i>
+                    <span class="side-menu__label">Manage Reports</span>
+                </a>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon" data-eva="settings-2-outline"></i><span class="side-menu__label">Settings</span><i class="angle fe fe-chevron-down"></i></a>
+                <ul class="slide-menu">
+                    <li><a class="slide-item" href="/SMTPDetails?Id=1">SMTP Details</a></li>
+                    
+                </ul>
+            </li>
+           
+        </ul>
+    </aside>
+    <!--/App Sidebar-->
+    <!--Main Content-->
+    <div class="main-content px-0 app-content">
+
+        <!-- main-header -->
+        <div class="main-header">
+            <div class="container-fluid">
+                <div class="main-header-center d-none d-lg-flex">
+                    <div class="dropdown main-header-app">
+                        <a href="" class="new header-link d-flex">
+                            <i class="header-icons" data-eva="grid-outline"></i>
+                            <div class="fs-14 header-subtext ml-1 text-dark">
+                                Apps
+                                <span><i class="mdi mdi-chevron-down"></i></span>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="drop-icon-wrap">
+                                <a href="#" class="drop-icon-item">
+                                    <div class="notifyimg bg-purple-transparent">
+                                        <i class="fe fe-mail text-purple"></i>
+                                    </div>
+                                    <span class="d-block"> E-mail</span>
+                                </a>
+                                <a href="#" class="drop-icon-item">
+                                    <div class="notifyimg bg-pink-transparent">
+                                        <i class="fe fe-calendar text-pink"></i>
+                                    </div>
+                                    <span class="d-block">Calendar</span>
+                                </a>
+                                <a href="#" class="drop-icon-item">
+                                    <div class="notifyimg bg-success-transparent">
+                                        <i class="fe fe-map-pin text-success"></i>
+                                    </div>
+                                    <span class="d-block">Maps</span>
+                                </a>
+                                <a href="#" class="drop-icon-item">
+                                    <div class="notifyimg bg-danger-transparent">
+                                        <i class="fe fe-shopping-cart text-danger"></i>
+                                    </div>
+                                    <span class="d-block">Shop</span>
+                                </a>
+                                <a href="#" class="drop-icon-item">
+                                    <div class="notifyimg bg-info-transparent">
+                                        <i class="fe fe-credit-card text-info"></i>
+                                    </div>
+                                    <span class="d-block">Payments</span>
+                                </a>
+                                <a href="#" class="drop-icon-item">
+                                    <div class="notifyimg bg-warning-transparent">
+                                        <i class="fe fe-edit text-warning"></i>
+                                    </div>
+                                    <span class="d-block">Reports</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-footer">
+                                <a href=""><i class="fe fe-plus-circle mr-1"></i> Add New</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-header-right d-none d-md-flex">
+                    <div class="dropdown main-header-flags d-none d-md-flex">
+                        <a href="#" class="new header-link d-flex">
+                            <img src="~/Content/Images/flags/us_flag.jpg" alt="img" class="country-Flag mr-1" />
+                            <div class="fs-14 header-subtext ml-1 text-dark">
+                                English
+                                <span><i class="mdi mdi-chevron-down"></i></span>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="pt-2 pb-2">
+                                <a href="" class="dropdown-item d-flex pb-3">
+                                    <img src="~/Content/Images/flags/us_flag.jpg" alt="img" class="country-Flag" />
+                                    <div class="ml-3 d-flex">
+                                        <span class="">English</span>
+                                    </div>
+                                </a>
+                                <a href="" class="dropdown-item d-flex pb-3">
+                                    <img src="~/Content/Images/flags/french_flag.jpg" alt="img" class="country-Flag" />
+                                    <div class="ml-3 d-flex">
+                                        <span class="">French</span>
+                                    </div>
+                                </a>
+                                <a href="" class="dropdown-item d-flex pb-3">
+                                    <img src="~/Content/Images/flags/germany_flag.jpg" alt="img" class="country-Flag" />
+                                    <div class="ml-3 d-flex">
+                                        <span class="">Germany</span>
+                                    </div>
+                                </a>
+                                <a href="" class="dropdown-item d-flex pb-3">
+                                    <img src="~/Content/Images/flags/italy_flag.jpg" alt="img" class="country-Flag" />
+                                    <div class="ml-3 d-flex">
+                                        <span class="">Italy</span>
+                                    </div>
+                                </a>
+                                <a href="" class="dropdown-item d-flex pb-3">
+                                    <img src="~/Content/Images/flags/russia_flag.jpg" alt="img" class="country-Flag" />
+                                    <div class="ml-3 d-flex">
+                                        <span class="">Russia</span>
+                                    </div>
+                                </a>
+                                <a href="" class="dropdown-item d-flex pb-3">
+                                    <img src="~/Content/Images/flags/spain_flag.jpg" alt="img" class="country-Flag" />
+                                    <div class="ml-3 d-flex">
+                                        <span class="">Spain</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-header-fullscreen fullscreen-button">
+                        <a href="#" class="header-link">
+                            <i class="header-icons" data-eva="expand-outline"></i>
+                        </a>
+                    </div>
+                    <div class="dropdown main-header-search">
+                        <a class="new header-link" href="">
+                            <i class="header-icons" data-eva="search-outline"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="p-2 main-form-search">
+                                <input class="form-control" placeholder="Search here..." type="search">
+                                <button class="btn"><i class="fe fe-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown main-header-message">
+                        <a class="new header-link" href="">
+                            <i class="header-icons" data-eva="email-outline"></i>
+                            <span class="badge bg-success nav-link-badge">2</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="p-3 border-bottom text-center">
+                                <h6 class="main-notification-title">Messages</h6>
+                            </div>
+                            <div class="main-notification-list">
+                                <div class="media new">
+                                    <div class="main-img-user">
+                                        <img alt="" src="~/Content/Images/userImage.jpg" />
+                                    </div>
+                                    <div class="media-body">
+                                        <p> <strong>Jack Wright</strong> Congratulatation your template awesome</p><span>Jan 15 12:32pm</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-footer">
+                                <a href="">View All Messages</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown main-header-notification">
+                        <a class="new header-link" href="">
+                            <i class="header-icons" data-eva="bell-outline"></i>
+                            <span class="pulse bg-danger"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="p-3 border-bottom text-center">
+                                <h6 class="main-notification-title">Notifications</h6>
+                            </div>
+                            <div class="main-notification-list">
+                                <a href="#" class="dropdown-item d-flex">
+                                    <div class="text-primary tx-18 mr-3 ">
+                                        <i class="fe fe-mail"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Commented on your post.</h6>
+                                        <div class="small text-muted">3 hours ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex border-top">
+                                    <div class="text-pink tx-18 mr-3 ">
+                                        <i class="fe fe-user"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">New User Registered</h6>
+                                        <div class="small text-muted">1 day ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex  border-top">
+                                    <div class="text-success tx-18 mr-3 ">
+                                        <i class="fe fe-thumbs-up"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Someone likes our posts</h6>
+                                        <div class="small text-muted">5 mins ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex border-top">
+                                    <div class="text-purple tx-18 mr-3 ">
+                                        <i class="fe fe-upload"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">New file has been uploaded</h6>
+                                        <div class="small text-muted">50 sec ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex border-top">
+                                    <div class="text-danger tx-18 mr-3 ">
+                                        <i class="fe fe-alert-circle"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">System alert</h6>
+                                        <div class="small text-muted">2 days ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex border-top">
+                                    <div class="text-warning tx-18 mr-3 ">
+                                        <i class="fe fe-server"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Server Rebooted</h6>
+                                        <div class="small text-muted">45 mins ago</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="dropdown-footer">
+                                <a href="">View All Notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown main-profile-menu">
+                        <a class="main-img-user" href="">
+                            <img alt="" src="~/Content/Images/userImage.jpg" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="main-header-profile">
+                                <h6>@Session["Email"]</h6>
+                                <span>Administrator</span>
+                            </div>
+                            <a class="dropdown-item" href="#"><i class="si si-user"></i> Profile</a>
+                            <a class="dropdown-item" href="#"><i class="si si-envelope-open"></i> Inbox</a>
+                            <a class="dropdown-item" href="#"><i class="si si-calendar"></i> Activity</a>
+                            <a class="dropdown-item" href="#"><i class="si si-bubbles"></i> Chat</a>
+                            <a class="dropdown-item" href="#"><i class="si si-settings"></i> Settings</a>
+                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()"><i class="si si-power"></i> Log Out</a>
+                            }
+                        </div>
+                    </div>
+                    <div class="main-header-sidebar-notification">
+                        <a href="#" class="header-link" data-toggle="sidebar-right" data-target=".sidebar-right">
+                            <i class="header-icons" data-eva="options-2-outline"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/main-header-->
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <div class="container">
+                <div class="d-flex">
+                    <!--logo-->
+                    <div class="mobileheader-logo">
+                        <div class="app-sidebar__toggle mobile-toggle" data-toggle="sidebar">
+                            <a class="open-toggle" href="#"><i class="header-icons" data-eva="menu-outline"></i></a>
+                            <a class="close-toggle" href="#"><i class="header-icons" data-eva="close-outline"></i></a>
+                        </div>
+                        <a class="main-logo desktop-logo" href="index.html">
+                            <img src="~/Content/Images/logo-3.png" alt="logo" width="180" />
+                        </a>
+                        <a class="main-logo dark-theme-logo" href="index.html">
+                            <img src="~/Content/Images/logo-2-dark.png" alt="logo" />
+                        </a>
+                    </div>
+                    <!--/logo-->
+                    <div class="d-flex order-lg-2 ml-auto header-right-icons">
+                        <a href="" class="navbar-toggler navresponsive-toggler d-md-none header-link" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+                           aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"><i class="header-icons" data-eva="more-horizontal-outline"></i></span>
+                        </a>
+                    </div>
+                    <div class="dropdown main-profile-menu">
+                        <a class="main-img-user" href="">
+                            <img alt="" src="~/Content/Images/userImage.jpg" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="main-header-profile">
+                                <h6>@Session["Email"]</h6>
+                                <span>Administrator</span>
+                            </div>
+                            <a class="dropdown-item" href="#"><i class="si si-user"></i> Profile</a>
+                            <a class="dropdown-item" href="#"><i class="si si-envelope-open"></i> Inbox</a>
+                            <a class="dropdown-item" href="#"><i class="si si-calendar"></i> Activity</a>
+                            <a class="dropdown-item" href="#"><i class="si si-bubbles"></i> Chat</a>
+                            <a class="dropdown-item" href="#"><i class="si si-settings"></i> Settings</a>
+                            <a class="dropdown-item" href="#"><i class="si si-power"></i> Log Out</a>
+                        </div>
+                    </div>
+                    <div class="main-header-sidebar-notification">
+                        <a href="#" class="header-link" data-toggle="sidebar-right" data-target=".sidebar-right">
+                            <i class="header-icons" data-eva="options-2-outline"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-1 navbar navbar-expand-lg  responsive-navbar navbar-dark d-md-none bg-white">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                <div class="d-flex order-lg-2 ml-auto">
+                    <div class="main-header-fullscreen fullscreen-button">
+                        <a href="#" class="header-link">
+                            <i class="header-icons" data-eva="expand-outline"></i>
+                        </a>
+                    </div>
+                    <div class="dropdown main-header-search">
+                        <a class="new header-link" href="">
+                            <i class="header-icons" data-eva="search-outline"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="p-2 main-form-search">
+                                <input class="form-control" placeholder="Search here..." type="search">
+                                <button class="btn"><i class="fe fe-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown main-header-message">
+                        <a class="new header-link" href="">
+                            <i class="header-icons" data-eva="email-outline"></i>
+                            <span class="badge bg-success nav-link-badge">3</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="p-3 border-bottom text-center">
+                                <h6 class="main-notification-title">Messages</h6>
+                            </div>
+                            <div class="main-notification-list">
+                                <div class="media new">
+                                    <div class="main-img-user">
+                                        <img alt="" src="~/Content/Images/userImage.jpg" />
+                                    </div>
+                                    <div class="media-body">
+                                        <p> <strong>Jack Wright</strong> Well done! your template awesome</p><span>Jan 15 12:32pm</span>
+                                    </div>
+                                </div>
+                                <div class="media new">
+                                    <div class="main-img-user online">
+                                        <img alt="" src="~/Content/Images/userImage.jpg" />
+                                    </div>
+                                    <div class="media-body">
+                                        <p><strong>Lisa	Rutherford</strong> Hey! there I'm available</p><span>Jan 13 04:16am</span>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="main-img-user">
+                                        <img alt="" src="~/Content/Images/userImage.jpg" />
+                                    </div>
+                                    <div class="media-body">
+                                        <p><strong>Blake Walker</strong> just created a new blog post</p><span>Dec 13 02:56am</span>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="main-img-user online">
+                                        <img alt="" src="~/Content/Images/userImage.jpg" />
+                                    </div>
+                                    <div class="media-body">
+                                        <p><strong>Fiona Morrison</strong> added new comment on your photo</p><span>Dec 12 10:40pm</span>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="main-img-user">
+                                        <img alt="" src="~/Content/Images/userImage.jpg" />
+                                    </div>
+                                    <div class="media-body">
+                                        <p><strong>Victor Lee</strong> added new comment on your photo</p><span>Nov 27 10:40pm</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-footer">
+                                <a href="">View All Messages</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown main-header-notification">
+                        <a class="new header-link" href="">
+                            <i class="header-icons" data-eva="bell-outline"></i>
+                            <span class="pulse bg-danger"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="p-3 border-bottom text-center">
+                                <h6 class="main-notification-title">Notifications</h6>
+                            </div>
+                            <div class="main-notification-list">
+                                <a href="#" class="dropdown-item d-flex">
+                                    <div class="text-primary tx-18 mr-3 ">
+                                        <i class="fe fe-mail"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Commented on your post.</h6>
+                                        <div class="small text-muted">3 hours ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex border-top">
+                                    <div class="text-pink tx-18 mr-3 ">
+                                        <i class="fe fe-user"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">New User Registered</h6>
+                                        <div class="small text-muted">1 day ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex  border-top">
+                                    <div class="text-success tx-18 mr-3 ">
+                                        <i class="fe fe-thumbs-up"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Someone likes our posts</h6>
+                                        <div class="small text-muted">5 mins ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex border-top">
+                                    <div class="text-purple tx-18 mr-3 ">
+                                        <i class="fe fe-upload"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">New file has been uploaded</h6>
+                                        <div class="small text-muted">50 sec ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex border-top">
+                                    <div class="text-danger tx-18 mr-3 ">
+                                        <i class="fe fe-alert-circle"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">System alert</h6>
+                                        <div class="small text-muted">2 days ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex border-top">
+                                    <div class="text-warning tx-18 mr-3 ">
+                                        <i class="fe fe-server"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Server Rebooted</h6>
+                                        <div class="small text-muted">45 mins ago</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="dropdown-footer">
+                                <a href="">View All Notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Header -->
+        <!--Main Content Container-->
+        <div class="container-fluid">
+            @RenderBody()
+            <!--Row-->
+            <div class="row row-sm">
+
+            </div>
+        </div><!--Main Content Container-->
+    </div>
+    <!--Main Content-->
+    <!--footer-->
+    <div class="main-footer mg-t-auto">
+        <div class="container-fluid">
+            <span>Copyright &copy; 2020 <a href="#">RojgarMantra</a>. Designed by <a href="https://www.spruko.com/">RojgarMantra</a> All rights reserved.</span>
+        </div>
+    </div>
+    <!--/footer-->
+    <!--Sidebar-right-->
+    <div class="sidebar sidebar-right sidebar-animate">
+        <div class="panel panel-primary rounded-0">
+            <div class="">
+                <div class="panel">
+                    <div class=" tab-menu-heading">
+                        <div class="tabs-menu1 ">
+                            <!-- Tabs -->
+                            <ul class="nav panel-tabs main-nav-line">
+                                <li><a href="#side-1" class="nav-link active" data-toggle="tab">Chat</a></li>
+                                <li><a href="#side-2" class="nav-link" data-toggle="tab">Friends</a></li>
+                                <li><a href="#side-3" class="nav-link" data-toggle="tab">Todo</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tabs-menu-body main-content-body-right bg-white p-0">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="side-1">
+                                <div class="pd-30 pt-3">
+                                    <label class="main-content-label tx-base mg-b-25">Today</label>
+                                    <div class="main-media-list-activity">
+                                        <div class="media">
+                                            <div class="media-icon bg-primary">
+                                                CH
+                                            </div>
+                                            <div class="media-body">
+                                                <h6>New Websites is Created</h6>
+                                                <span><i class="mdi mdi-clock text-muted mr-1"></i> 2m ago</span>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-icon bg-secondary">
+                                                A
+                                            </div>
+                                            <div class="media-body">
+                                                <h6>Prepare For the Next Project</h6>
+                                                <span><i class="mdi mdi-clock text-muted mr-1"></i> 45m ago</span>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-icon bg-success">
+                                                JK
+                                            </div>
+                                            <div class="media-body">
+                                                <h6>Decide the live Discussion Time</h6>
+                                                <span><i class="mdi mdi-clock text-muted mr-1"></i> 1hr ago</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label class="main-content-label tx-base mg-b-25 mt-5">Yesterday</label>
+                                    <div class="main-media-list-activity">
+                                        <div class="media">
+                                            <div class="media-icon bg-info">
+                                                M
+                                            </div>
+                                            <div class="media-body">
+                                                <h6>Prepare for Presentation</h6>
+                                                <span><i class="mdi mdi-clock text-muted mr-1"></i>Yesterday 1:45pm</span>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-icon bg-danger">
+                                                L
+                                            </div>
+                                            <div class="media-body">
+                                                <h6>New Project Started..</h6>
+                                                <span><i class="mdi mdi-clock text-muted mr-1"></i> Yesterday 11:30am</span>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-icon bg-warning">
+                                                U
+                                            </div>
+                                            <div class="media-body">
+                                                <h6>Weekend trip...</h6>
+                                                <span><i class="mdi mdi-clock text-muted mr-1"></i> Yesterday 5:20am</span>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-icon bg-pink">
+                                                P
+                                            </div>
+                                            <div class="media-body">
+                                                <h6>Weekend trip...</h6>
+                                                <span><i class="mdi mdi-clock text-muted mr-1"></i> Yesterday 4:10am</span>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-icon bg-secondary">
+                                                A
+                                            </div>
+                                            <div class="media-body">
+                                                <h6>Weekend trip...</h6>
+                                                <span><i class="mdi mdi-clock text-muted mr-1"></i> Yesterday 2:20am</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="side-2">
+                                <div class="p-3 pd-t-30 d-flex  align-items-center border-bottom">
+                                    <div class="mr-2">
+                                        <div class="main-img-user"><img alt="avatar" src="~/Content/Images/userImage.jpg" class="mCS_img_loaded"></div>
+                                    </div>
+                                    <div class="">
+                                        <div class="font-weight-semibold">Sally	Fraser</div>
+                                        <small class="text-muted">App Developer</small>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <a href="#" class="btn btn-sm btn-light"><i class="fe fe-message-square"></i></a>
+                                    </div>
+                                </div>
+                                <div class="p-3 d-flex  align-items-center border-bottom">
+                                    <div class="mr-2">
+                                        <div class="main-img-user"><img alt="avatar" src="~/Content/Images/userImage.jpg" class="mCS_img_loaded"></div>
+                                    </div>
+                                    <div class="">
+                                        <div class="font-weight-semibold">Neil Baker</div>
+                                        <small class="text-muted">Web Designer</small>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <a href="#" class="btn btn-sm btn-light"><i class="fe fe-message-square"></i></a>
+                                    </div>
+                                </div>
+                                <div class="p-3 d-flex  align-items-center border-bottom">
+                                    <div class="mr-2">
+                                        <div class="main-img-user"><img alt="avatar" src="~/Content/Images/userImage.jpg" class="mCS_img_loaded"></div>
+                                    </div>
+                                    <div class="">
+                                        <div class="font-weight-semibold">Amelia Parsons</div>
+                                        <small class="text-muted">Administrator</small>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <a href="#" class="btn btn-sm btn-light"><i class="fe fe-message-square"></i></a>
+                                    </div>
+                                </div>
+                                <div class="p-3 d-flex  align-items-center border-bottom">
+                                    <div class="mr-2">
+                                        <div class="main-img-user"><img alt="avatar" src="~/Content/Images/userImage.jpg" class="mCS_img_loaded"></div>
+                                    </div>
+                                    <div class="">
+                                        <div class="font-weight-semibold">Joseph Anderson</div>
+                                        <small class="text-muted">Web Developer</small>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <a href="#" class="btn btn-sm btn-light"><i class="fe fe-message-square"></i></a>
+                                    </div>
+                                </div>
+                                <div class="p-3 d-flex  align-items-center border-bottom">
+                                    <div class="mr-2">
+                                        <div class="main-img-user"><img alt="avatar" src="~/Content/Images/userImage.jpg" class="mCS_img_loaded"></div>
+                                    </div>
+                                    <div class="">
+                                        <div class="font-weight-semibold">Grace	Payne</div>
+                                        <small class="text-muted">App Designer</small>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <a href="#" class="btn btn-sm btn-light"><i class="fe fe-message-square"></i></a>
+                                    </div>
+                                </div>
+                                <div class="p-3 d-flex  align-items-center border-bottom">
+                                    <div class="mr-2">
+                                        <div class="main-img-user"><img alt="avatar" src="~/Content/Images/userImage.jpg" class="mCS_img_loaded"></div>
+                                    </div>
+                                    <div class="">
+                                        <div class="font-weight-semibold">Paul Glover</div>
+                                        <small class="text-muted">Team Leader</small>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <a href="#" class="btn btn-sm btn-light"><i class="fe fe-message-square"></i></a>
+                                    </div>
+                                </div>
+                                <div class="p-3 d-flex  align-items-center border-bottom">
+                                    <div class="mr-2">
+                                        <div class="main-img-user"><img alt="avatar" src="~/Content/Images/userImage.jpg" class="mCS_img_loaded"></div>
+                                    </div>
+                                    <div class="">
+                                        <div class="font-weight-semibold">Sophie Russell</div>
+                                        <small class="text-muted">Manager</small>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <a href="#" class="btn btn-sm btn-light"><i class="fe fe-message-square"></i></a>
+                                    </div>
+                                </div>
+                                <div class="p-3 d-flex  align-items-center border-bottom">
+                                    <div class="mr-2">
+                                        <div class="main-img-user"><img alt="avatar" src="~/Content/Images/userImage.jpg" class="mCS_img_loaded"></div>
+                                    </div>
+                                    <div class="">
+                                        <div class="font-weight-semibold">Jack Ince</div>
+                                        <small class="text-muted">Tester</small>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <a href="#" class="btn btn-sm btn-light"><i class="fe fe-message-square"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="side-3">
+                                <div class="d-flex p-3 border-bottom">
+                                    <label class="ckbox"><input checked="" type="checkbox"><span>Do something more</span></label>
+                                    <span class="ml-auto">
+                                        <i class="si si-pencil text-primary mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Edit"></i>
+                                        <i class="si si-trash text-danger mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Delete"></i>
+                                    </span>
+                                </div>
+                                <div class="d-flex p-3 border-bottom">
+                                    <label class="ckbox"><input type="checkbox"><span>Find an idea</span></label>
+                                    <span class="ml-auto">
+                                        <i class="si si-pencil text-primary mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Edit"></i>
+                                        <i class="si si-trash text-danger mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Delete"></i>
+                                    </span>
+                                </div>
+                                <div class="d-flex p-3 border-bottom">
+                                    <label class="ckbox"><input type="checkbox"><span>Do something else</span></label>
+                                    <span class="ml-auto">
+                                        <i class="si si-pencil text-primary mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Edit"></i>
+                                        <i class="si si-trash text-danger mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Delete"></i>
+                                    </span>
+                                </div>
+                                <div class="d-flex p-3 border-bottom">
+                                    <label class="ckbox"><input type="checkbox"><span>Updated more files</span></label>
+                                    <span class="ml-auto">
+                                        <i class="si si-pencil text-primary mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Edit"></i>
+                                        <i class="si si-trash text-danger mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Delete"></i>
+                                    </span>
+                                </div>
+                                <div class="d-flex p-3 border-bottom">
+                                    <label class="ckbox"><input type="checkbox"><span>System Updated</span></label>
+                                    <span class="ml-auto">
+                                        <i class="si si-pencil text-primary mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Edit"></i>
+                                        <i class="si si-trash text-danger mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Delete"></i>
+                                    </span>
+                                </div>
+                                <div class="d-flex p-3 border-bottom">
+                                    <label class="ckbox"><input type="checkbox"><span>User Feedback</span></label>
+                                    <span class="ml-auto">
+                                        <i class="si si-pencil text-primary mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Edit"></i>
+                                        <i class="si si-trash text-danger mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Delete"></i>
+                                    </span>
+                                </div>
+                                <div class="d-flex p-3 border-bottom">
+                                    <label class="ckbox"><input checked="" type="checkbox"><span>Payment reminders</span></label>
+                                    <span class="ml-auto">
+                                        <i class="si si-pencil text-primary mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Edit"></i>
+                                        <i class="si si-trash text-danger mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Delete"></i>
+                                    </span>
+                                </div>
+                                <div class="d-flex p-3 border-bottom">
+                                    <label class="ckbox"><input type="checkbox"><span>Finsh Something more</span></label>
+                                    <span class="ml-auto">
+                                        <i class="si si-pencil text-primary mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Edit"></i>
+                                        <i class="si si-trash text-danger mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Delete"></i>
+                                    </span>
+                                </div>
+                                <div class="d-flex p-3 border-bottom">
+                                    <label class="ckbox"><input type="checkbox"><span>Hangout with friends</span></label>
+                                    <span class="ml-auto">
+                                        <i class="si si-pencil text-primary mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Edit"></i>
+                                        <i class="si si-trash text-danger mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Delete"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("~/Views/Shared/_ModalAddEdit.cshtml")
+
+    <!--/Sidebar-right-->
+    <!-- JQuery min js -->
+    @*<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>*@
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- Datepicker js -->
+    <script src="~/Scripts/datepicker.js"></script>
+
+    <!-- Bootstrap Bundle js -->
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+
+    <!-- Ionicons js -->
+    <script src="~/Scripts/ionicons.js"></script>
+
+    <!-- Eva-Icons js -->
+    <script src="~/Scripts/eva.min.js"></script>
+
+    <!--Chart bundle min js -->
+    <script src="~/Scripts/Chart.bundle.min.js"></script>
+
+    <!-- Flot js-->
+    <script src="~/Scripts/jquery.flot.js"></script>
+    <script src="~/Scripts/jquery.flot.pie.js"></script>
+    <script src="~/Scripts/jquery.flot.resize.js"></script>
+    <!--Jquery.peity js -->
+    <script src="~/Scripts/jquery.peity.min.js"></script>
+
+    <!-- JQuery sparkline js -->
+    <script src="~/Scripts/jquery.sparkline.min.js"></script>
+
+    <!-- Sampledata js -->
+    <script src="~/Scripts/chart.flot.sampledata.js"></script>
+
+    <!-- Moment js -->
+    <script src="~/Scripts/moment.js"></script>
+
+    <!-- select2.min js -->
+    <script src="~/Scripts/select2.min.js"></script>
+    <script src="~/Scripts/select2.js"></script>
+
+    <!--Bootstrap-daterangepicker js-->
+    <script src="~/Scripts/datepicker.js"></script>
+
+    <!-- Sidebar js -->
+    <script src="~/Scripts/sidebar.js"></script>
+    <script src="~/Scripts/sidebar-custom.js"></script>
+
+    <!-- Custom Scroll bar Js-->
+    <script src="~/Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Vector map js -->
+    <script src="~/Scripts/jquery.vmap.min.js"></script>
+    <script src="~/Scripts/jquery.vmap.world.js"></script>
+
+    <!-- Vector map Sampledata js -->
+    <script src="~/Scripts/jquery.vmap.sampledata.js"></script>
+
+    <!-- Side-menu JS-->
+    <script src="~/Scripts/sidemenu.js"></script>
+
+    <!-- Perfect-scrollbar js -->
+    <script src="~/Scripts/perfect-scrollbar.min.js"></script>
+
+
+    <!-- LightSlider js -->
+    <script src="~/Scripts/lightslider.min.js"></script>
+
+    <!-- Custom js -->
+    <script src="~/Scripts/custom.js"></script>
+    <script src="~/Scripts/chart.flot.sampledata.js"></script>
+    <script src="~/Scripts/dashboard.sampledata.js"></script>
+
+    <!-- Morris js -->
+    <script src="~/Scripts/raphael.min.js"></script>
+    <script src="~/Scripts/morris.min.js"></script>
+
+    <!--Data Table js -->
+    <script src="~/Content/datatable/js/jquery.dataTables.js"></script>
+    <script src="~/Content/datatable/js/dataTables.bootstrap4.js"></script>
+    <script src="~/Content/datatable/js/dataTables.buttons.min.js"></script>
+    <script src="~/Content/datatable/js/buttons.bootstrap4.min.js"></script>
+    @* <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.js"></script>*@
+    @*
+            <script src="~/Content/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+            <script src="~/Content/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+
+            <script src="~/Content/datatable/js/jszip.min.js"></script>
+            <script src="~/Content/datatable/js/pdfmake.min.js"></script>
+            <script src="~/Content/datatable/js/vfs_fonts.js"></script>
+            <script src="~/Content/datatable/js/buttons.html5.min.js"></script>
+            <script src="~/Content/datatable/js/buttons.print.min.js"></script>
+            <script src="~/Content/datatable/js/buttons.colVis.min.js"></script>
+        <script src="~/Content/datatable/dataTables.responsive.min.js"></script>
+        <script src="~/Content/datatable/responsive.bootstrap4.min.js"></script>*@
+
+    <!--SweetAlert js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+    <!-- Modules js -->
+    <script src="~/Js/common.js"></script>
+    <script src="~/Js/User/index.js"></script>
+    <script src="~/Js/User/addedit.js"></script>
+    <script src="~/Js/JobCategory/index.js"></script>
+    <script src="~/Js/JobCategory/addedit.js"></script>
+    <script src="~/Js/Employer/index.js"></script>
+    <script src="~/Js/Employer/addedit.js"></script>
+    <script src="~/Js/JobSeeker/index.js"></script>
+    <script src="~/Js/JobSeeker/addedit.js"></script>
+    <script src="~/Js/TrainingInstitute/index.js"></script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

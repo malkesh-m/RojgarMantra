@@ -1,0 +1,168 @@
+﻿
+<html>
+<head>
+    <style>
+        .container {
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 1000px;
+            margin: auto;
+            text-align: end;
+            font-family: arial;
+            color: black;
+            background-color: white;
+        }
+
+        .h4 {
+            position: center;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+    @using PagedList;
+    @using PagedList.Mvc;
+    @model IEnumerable<RojgarMantra.Models.CountryAdd>
+
+
+    @{
+        ViewBag.Title = "CountryDetails";
+    }
+    <div class="main-content-header container-fluid p-4">
+        <div>
+            <h6 class="main-content-title tx-18 mg-b-5 mg-t-7">Country Details</h6>
+        </div>
+        <div class="btn-list">
+            <a id="BtnRefresh" class="btn btn-rounded btn-success"><i class="fe fe-plus-circle mr-2"></i>Refresh</a>
+            <a href='/ManageCountry/ManageCountryDetails' class="btn btn-rounded btn-primary"><i class="fe fe-plus-circle mr-2"></i>Add</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" style="overflow:auto">
+            <!--Main Content Header-->
+
+
+
+
+
+            <div>
+
+            </div>
+
+            <div class="text-right">
+
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        Find by name: @Html.TextBox("SearchString")
+                        <input type="submit" value="Search" />
+                    </p>
+                }
+            </div>
+            <table id="TblUser" class="table nowrap text-md-nowrap" width="100%" cellspacing="0">
+
+
+
+
+
+                <tr>
+
+
+                    <th class="font-weight-bold">
+                        @Html.DisplayName("Action")
+                    </th>
+
+
+
+                    <th class="font-weight-bold">
+                        @Html.ActionLink("Country Name", "CountryDetails", new { Sorting_Order = ViewBag.SortingName })
+                    </th>
+
+
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    using (Html.BeginForm("Delete", "ManageCountry", new { id = item.CountryID }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <tr>
+
+
+                            <td>
+                                @Html.ActionLink("Edit", "EditCountry", new { id = item.CountryID }, new { @class = "btn btn-info" }) |
+
+
+
+                                <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete record = @item.CountryName');" />
+
+
+
+
+                            </td>
+
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CountryName)
+                            </td>
+
+
+
+
+                        </tr>
+                    }
+                }
+
+            </table>
+
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+
+@section scripts {
+    <script>
+        $('document').ready(function () {
+            var table_name = $("#TblUser").DataTable({
+                //alert('ee'); return false;
+                "sAjaxSource": "/ManageCountry/ CountryDetails",
+                "bServerSide": true,
+                "bProcessing": true,
+                "bSearchable": true,
+                "order": [[1, "asc"]],
+                "language": {
+                    "emptyTable": "No Record Found.",
+                    "processing": '<i class="fa fa-spinner fa-spin fa-3x fa-fw" style="color:#2a2b2b;"></i>'
+                },
+                "columns": [
+                    {
+                        "data": null, "name": "Action", "title": "Action", "orderable": false, "autoWidth": true,
+                        "render": function (data, type, row) {
+                            return "<a href='/Employer/AddEdit?Id=" + row.Id + "' title='Edit'><i class='fas fa-edit'></i></a> &nbsp <a href='#' onclick='EmployerIndex.delete(\"" + row.Id + "\")'" + row.Id + "' title='Delete'><i class='fas fa-trash-alt'></i></a>"
+                        }
+                    },
+                    { "data": "CountryName", "name": "CountryName", "title": "CountryName", "autoWidth": true },
+
+
+                ],
+            });
+            $('#TblUser').on('draw.dt', function (event) {
+                var oTable = $('#TblUser').dataTable();
+            });
+
+        })
+
+    </script>
+}
+
+
+

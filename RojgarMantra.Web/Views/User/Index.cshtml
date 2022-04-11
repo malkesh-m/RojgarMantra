@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Staff";
+}
+<!--Main Content Header-->
+<div class="main-content-header container-fluid p-4">
+    <div>
+        <h6 class="main-content-title tx-18 mg-b-5 mg-t-7">Staff List</h6>
+    </div>
+    <div class="btn-list">
+        <a id="BtnRefresh" class="btn btn-rounded btn-success"><i class="fe fe-plus-circle mr-2"></i>Refresh</a>
+        <a href='/User/AddEdit' class="btn btn-rounded btn-primary"><i class="fe fe-plus-circle mr-2"></i>Add</a>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body" style="overflow:auto">
+        <!--Main Content Header-->
+        <table id="TblUser" class="table nowrap text-md-nowrap" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Actions</th>
+                    <th>FirstName</th>
+                    <th>MiddleName</th>
+                    <th>LastName</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        </div>
+    </div>
+        @section scripts {
+            <script>
+                $(function () {
+                    userIndex.init();
+                });
+            </script>
+        }
